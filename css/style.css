@@ -151,6 +151,7 @@ footer {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 footer img {
   width: 100%;
@@ -189,6 +190,7 @@ footer img {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.8rem;
 }
 .command > div:first-of-type {
   display: flex;
@@ -197,13 +199,31 @@ footer img {
 }
 .command i {
   padding: 0 0.5rem;
-  font-size: 0.8rem;
+
   color: white;
 }
 .command > div > div:nth-of-type(2) i {
   font-size: 1.4rem;
 }
-
+/* volume section */
+.volume {
+  padding: 0 0.5rem;
+  max-width: 30%;
+  display: flex;
+  gap: 5%;
+  color: white;
+  align-items: center;
+}
+.volume > div:first-of-type {
+  max-width: 35%;
+  font-size: 0.6rem;
+}
+.volume > div:last-of-type {
+  max-width: 60%;
+}
+.volume .minutage {
+  max-width: 100%;
+}
 /*---------------------------
 
   responsive
