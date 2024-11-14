@@ -1,3 +1,7 @@
+:root {
+  --secondaryColor: #7d7f84;
+}
+
 /*---------------------------
 
         RESET   
@@ -27,9 +31,10 @@ body {
   height: 100vh;
   background-color: #141922;
 }
-body > div:first-of-type {
+body > div {
   display: flex;
 }
+
 ul {
   list-style: none;
 }
@@ -41,6 +46,14 @@ ul {
 ------------------------------*/
 button {
   background-color: transparent;
+}
+.btn-primary {
+  color: white;
+  border-radius: 100px;
+  border: solid 1px;
+  font-size: 0.7rem;
+  padding: 0.5rem 1.9rem;
+  margin: 1.7rem;
 }
 .minutage {
   cursor: pointer;
@@ -61,6 +74,7 @@ button {
   border-width: 0;
   border-radius: 100%;
 }
+
 /*---------------------------
 
     HEADER
@@ -134,10 +148,39 @@ main {
   height: 90vh;
   overflow-y: auto;
 }
-main > div:first-of-type {
+main > section:first-of-type {
   background-color: #080b12;
-  height: 5.625rem;
+  display: flex;
+  justify-content: end;
 }
+
+/* categories */
+
+.categories ul {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5375rem;
+  color: var(--secondaryColor);
+  font-size: 0.775rem;
+  padding-top: 0.9rem;
+  text-align: center;
+  margin: 0 0.5rem;
+}
+.categories li {
+  float: left;
+  width: calc(100% / 4 - 0.5375rem);
+  margin-bottom: 1.5rem;
+}
+h2 {
+  color: white;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+/* selction */
+
 
 /*---------------------------
 
@@ -146,7 +189,7 @@ Footer
 ------------------------------*/
 
 footer {
-  height: 6.25rem;
+  height: 5rem;
   background-color: #282828;
   align-items: center;
   display: flex;
@@ -268,6 +311,7 @@ footer img {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
   header li img {
     max-width: 20%;
