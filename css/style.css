@@ -23,21 +23,43 @@ main.container > div > div {
   margin-right: auto;
   max-width: 1200px;
 }
-
-/*---------------------------
-
-    HEADER
-
-------------------------------*/
 body {
   height: 100vh;
 }
 body > div:first-of-type {
   display: flex;
 }
+
+/*---------------------------
+
+    HEADER
+
+------------------------------*/
+
 header {
   background-color: #000;
-  width: 50px;
+  width: 3.125em;
+  flex-shrink: 0;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+header img {
+  width: 100%;
+}
+header .top > div:first-of-type img:last-of-type {
+  display: none;
+}
+header span {
+  display: none;
+}
+header .top > div:not(:first-of-type),
+header .bot > div {
+  max-width: 70%;
 }
 
 /*---------------------------
@@ -50,6 +72,7 @@ main {
   width: calc(100% - 3.125rem);
   background-color: #141922;
   height: 90vh;
+  overflow-y: auto;
 }
 main > div:first-of-type {
   background-color: #080b12;
@@ -72,9 +95,18 @@ footer {
   responsive
 
 ------------------------------*/
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 36rem) {
   header {
     width: 12.5rem;
+  }
+  header .top > div:first-of-type img:last-of-type {
+    display: block;
+  }
+  header .top > div:first-of-type img:first-of-type {
+    display: none;
+  }
+  header span {
+    display: inline;
   }
 }
 
