@@ -67,23 +67,19 @@ footer {
   background-color: #282828;
 }
 
-
-
-
-
-
 /*---------------------------
 
   responsive
 
 ------------------------------*/
-
-@media screen and (min-width:75rem) {
-  header{
+@media screen and (min-width: 40rem) {
+  header {
     width: 12.5rem;
   }
 }
 
+@media screen and (min-width: 75rem) {
+}
 
 /*---------------------------
 
