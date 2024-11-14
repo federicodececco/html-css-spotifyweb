@@ -167,20 +167,26 @@ footer img {
   padding: 0.9375rem 0.5rem;
   gap: 0.6375rem;
   color: #878787;
-  font-size: 0.675rem;
+  font-size: 0.775rem;
   align-items: center;
 }
 .info h5 {
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .info > div:first-of-type {
-  max-width: 15%;
+  max-width: 35%;
 }
 .info > div:last-of-type i {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+.info > div:last-of-type {
+  max-width: 25%;
+}
+.info > div:nth-of-type(2) {
+  flex-grow: 1;
 }
 
 /* command section */
@@ -191,11 +197,17 @@ footer img {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
+  justify-content: center;
 }
 .command > div:first-of-type {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+.command > div:last-of-type {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 .command i {
   padding: 0 0.5rem;
@@ -204,6 +216,9 @@ footer img {
 }
 .command > div > div:nth-of-type(2) i {
   font-size: 1.4rem;
+}
+.command .minutage {
+  max-width: 50%;
 }
 /* volume section */
 .volume {
