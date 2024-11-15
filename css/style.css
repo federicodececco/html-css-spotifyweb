@@ -1,5 +1,6 @@
 :root {
   --secondaryColor: #7d7f84;
+  --primaryColor: white;
 }
 
 /*---------------------------
@@ -91,7 +92,8 @@ header {
   justify-content: space-between;
   text-align: center;
   font-size: 1rem;
-  color: white;
+  color: var(--secondaryColor);
+  overflow-y: auto;
 }
 .logo {
   padding-bottom: 1rem;
@@ -103,17 +105,27 @@ header {
 header span {
   display: none;
 }
+
 .top {
   padding-bottom: 1rem;
+  max-height: 30%;
 }
 .playlist {
   display: none;
   text-align: left;
+  max-height: 15rem;
+  margin-bottom: 9rem;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 .playlist div {
   display: flex;
   align-items: center;
   padding-bottom: 1rem;
+}
+.playlist ul {
+  overflow-y: auto;
+  max-height: 15rem;
 }
 .playlist i {
   color: black;
@@ -121,15 +133,20 @@ header span {
   font-size: 2.4rem;
   margin-right: 0.7rem;
 }
-.playlist h3 {
+header h3 {
+  display: none;
+  text-align: left;
   padding-bottom: 0.8rem;
   font-weight: bolder;
+  color: var(--primaryColor);
 }
 .playlist li {
   margin-top: 0.6rem;
   font-size: 0.875rem;
 }
-
+.bottom {
+  max-height: 15%;
+}
 .download {
   width: 50%;
 }
@@ -155,14 +172,17 @@ main > section:first-of-type {
 }
 
 /* categories */
-
+main p {
+  margin-left: 1rem;
+  color: var(--secondaryColor);
+}
 .categories ul {
   max-width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5375rem;
+  gap: 0.3375rem;
   color: var(--secondaryColor);
   font-size: 0.775rem;
   padding-top: 0.9rem;
@@ -171,16 +191,47 @@ main > section:first-of-type {
 }
 .categories li {
   float: left;
-  width: calc(100% / 4 - 0.5375rem);
+  width: calc(100% / 4 - 0.3375rem);
   margin-bottom: 1.5rem;
 }
 h2 {
-  color: white;
+  color: var(--primaryColor);
   margin-left: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
+
 /* selction */
 
+.selection > h2 {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.row {
+  display: flex;
+  gap: 0.35rem;
+  padding: 15px;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.card {
+  width: calc(50% - 0.35rem);
+  text-align: center;
+  color: var(--secondaryColor);
+  font-size: 0.875rem;
+}
+.card h3 {
+  text-align: center;
+  padding-bottom: 0.8rem;
+  font-weight: bolder;
+  color: var(--primaryColor);
+}
+.card p {
+  margin: none;
+}
+.card img {
+  max-width: 100%;
+  padding-bottom: 0.3125rem;
+}
 
 /*---------------------------
 
@@ -195,6 +246,8 @@ footer {
   display: flex;
   justify-content: space-between;
   color: white;
+  position: sticky;
+  bottom: 0;
 }
 footer img {
   width: 100%;
@@ -250,6 +303,8 @@ footer img {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  position: relative;
+  top: -0.5rem;
 }
 .command > div:last-of-type {
   display: flex;
@@ -304,6 +359,9 @@ footer img {
   .logo img:first-of-type {
     display: none;
   }
+  .playlist {
+    display: block;
+  }
   header span {
     display: inline;
   }
@@ -316,7 +374,10 @@ footer img {
   header li img {
     max-width: 20%;
   }
-
+  header h3 {
+    display: block;
+    margin-top: 0.9375rem;
+  }
   .bottom img {
     position: relative;
     left: -2px;
@@ -328,14 +389,19 @@ footer img {
     gap: 1rem;
     position: relative;
   }
+  .bottom > div:last-of-type {
+    color: var(--primaryColor);
+  }
   hr {
     display: block;
-    border: solid 1px white;
+    border: solid 1px;
     width: 100%;
     margin: 0.5rem 0;
   }
-  .playlist {
-    display: block;
+
+  /* categories */
+  .categories li {
+    width: calc(100% / 3 - 0.5375rem);
   }
 
   /* footer */
@@ -357,6 +423,21 @@ footer img {
 }
 
 @media screen and (min-width: 48rem) {
+  /* categories */
+  .categories ul {
+    gap: 2rem;
+  }
+
+  .categories li {
+    width: calc(100% / 5 - 0.5375rem);
+  }
+
+  /* selection */
+  .card {
+    width: calc(25% - 00.625rem);
+    font-size: 0.875rem;
+  }
+
   /* foooter */
   .info > div:last-of-type {
     display: flex;
@@ -388,6 +469,11 @@ footer img {
   }
 }
 @media screen and (min-width: 64rem) {
+  /* categories */
+  .categories li {
+    width: auto;
+  }
+
   .info > div:first-of-type img {
     max-width: calc(6.35rem - 2.3rem);
   }
@@ -396,11 +482,20 @@ footer img {
   }
   .command > div:first-of-type {
     position: relative;
-    top: -0.5rem;
+    top: 0;
+
     gap: 0.9rem;
   }
   .command > div > div:nth-of-type(2) i {
     font-size: 2rem;
+  }
+  /* selection */
+  .row:first-of-type {
+    justify-content: space-between;
+  }
+  .card {
+    width: calc(100% / 6 - 00.625rem);
+    font-size: 0.875rem;
   }
 }
 
