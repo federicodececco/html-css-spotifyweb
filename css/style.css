@@ -56,6 +56,10 @@ button {
   padding: 0.5rem 1.9rem;
   margin: 1.7rem;
 }
+.btn-primary:hover {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
 .minutage {
   cursor: pointer;
   background: var(--secondaryColor);
@@ -172,6 +176,7 @@ main > section:first-of-type {
   background-color: #080b12;
   display: flex;
   justify-content: end;
+  height: 5.625rem;
 }
 
 /* categories */
@@ -197,7 +202,7 @@ main p {
   width: calc(100% / 4 - 0.3375rem);
   margin-bottom: 1.5rem;
 }
-.categories li:hover{
+.categories li:hover {
   color: var(--primaryColor);
   cursor: pointer;
 }
