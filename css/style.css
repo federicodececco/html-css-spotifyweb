@@ -197,6 +197,10 @@ main p {
   width: calc(100% / 4 - 0.3375rem);
   margin-bottom: 1.5rem;
 }
+.categories li:hover{
+  color: var(--primaryColor);
+  cursor: pointer;
+}
 h2 {
   color: var(--primaryColor);
   margin-left: 1rem;
@@ -243,11 +247,11 @@ h2 {
 
 .selection .row:last-of-type img {
   border-radius: 100%;
-
 }
 .card > div:hover img {
   opacity: 0.3;
   transition: 0.4s ease;
+  cursor: pointer;
 }
 .overlay {
   position: absolute;
