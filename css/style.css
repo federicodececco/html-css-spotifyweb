@@ -66,12 +66,12 @@ button {
   transform: scale(1.2, 1.2);
   cursor: pointer;
 }
+/* for some reason using secondaryColor seems to remove inputs' borders */
 .minutage {
   cursor: pointer;
-  background: var(--secondaryColor);
   height: 0.5rem;
   border-radius: 90px;
-  accent-color: #c1c1c1;
+  accent-color: var(--secondaryColor);
   border-width: 0;
   outline: none;
   border: none;
