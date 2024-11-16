@@ -1,6 +1,6 @@
 :root {
-  --secondaryColor: #7d7f84;
   --primaryColor: white;
+  --secondaryColor: #7d7f84;
   --hoverColor: #e5e5e6;
   --spotifyColor: #1db954;
   --paddingHeader: 0.625rem;
@@ -56,7 +56,7 @@ button {
 }
 .btn-primary {
   color: var(--primaryColor);
-  border-radius: 100px;
+  border-radius: 6.25rem;
   border: solid 1px;
   font-size: 0.7rem;
   padding: 0.5rem 1.9rem;
@@ -93,7 +93,25 @@ button {
   opacity: 0;
 }
 .minutage:hover::-webkit-slider-thumb {
-  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor);
+  border-radius: 6.35rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hoverColor);
 }
 
 /*---------------------------
@@ -220,6 +238,7 @@ main {
   width: calc(100% - 3.125rem);
   background-color: #141922;
   height: 90vh;
+  position: relative;
   overflow-y: auto;
 }
 main > section:first-of-type {
