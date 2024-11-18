@@ -5,6 +5,34 @@
   --spotifyColor: #1db954;
   --paddingHeader: 0.625rem;
 }
+
+/*---------------------------
+
+
+  RESET
+
+
+------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/*----------------
+    LAYOUT
+------------------*/
+
+/*---------------------------
+
+
+      TYPOGRAPHY
+
+
+------------------------------*/
+
 @font-face {
   font-family: "SpotifyMix";
   src: url("../font/SpotifyMix-Medium.eot");
@@ -16,35 +44,21 @@
   font-style: normal;
 }
 
-/*---------------------------
-
-        RESET   
-
-------------------------------*/
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
+body {
+  font-family: "SpotifyMix", "Nunito", sans-serif;
 }
 
 /*---------------------------
 
-        GENERAL
+
+      GERNERAL
+
 
 ------------------------------*/
-section.container > div,
-footer.container > div,
-main.container > div > div {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-}
+
 body {
   height: 100vh;
   background-color: #141922;
-  font-family: "SpotifyMix", "Nunito", sans-serif;
 }
 body > div {
   display: flex;
@@ -57,25 +71,12 @@ ul {
 
 /*---------------------------
 
-  button
+
+      INPUT
+
 
 ------------------------------*/
 
-button {
-  background-color: transparent;
-}
-.btn-primary {
-  color: var(--primaryColor);
-  border-radius: 6.25rem;
-  border: solid 1px;
-  font-size: 0.7rem;
-  padding: 0.5rem 1.9rem;
-  margin: 1.7rem;
-}
-.btn-primary:hover {
-  transform: scale(1.2, 1.2);
-  cursor: pointer;
-}
 /* for some reason using secondaryColor seems to remove inputs' borders */
 .minutage {
   cursor: pointer;
@@ -106,25 +107,51 @@ button {
 ::-webkit-scrollbar {
   width: 3px;
 }
-/* Track */
+/* track */
 ::-webkit-scrollbar-track {
   display: none;
 }
 
-/* Handle */
+/* handle */
 ::-webkit-scrollbar-thumb {
   background: var(--secondaryColor);
   border-radius: 6.35rem;
 }
 
-/* Handle on hover */
+/* handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--hoverColor);
 }
 
 /*---------------------------
 
-    HEADER
+
+           BUTTON
+
+
+------------------------------*/
+
+button {
+  background-color: transparent;
+}
+.btn-primary {
+  color: var(--primaryColor);
+  border-radius: 6.25rem;
+  border: solid 1px;
+  font-size: 0.7rem;
+  padding: 0.5rem 1.9rem;
+  margin: 1.7rem;
+}
+.btn-primary:hover {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+/*---------------------------
+
+
+           HEADER
+
 
 ------------------------------*/
 
@@ -141,7 +168,9 @@ header {
   color: var(--secondaryColor);
   overflow-y: auto;
 }
-
+/*---------------------------
+logo section
+------------------------------*/
 .logo {
   margin-bottom: 0.4rem;
   position: relative;
@@ -167,6 +196,9 @@ header span {
 .top li {
   padding: 0 var(--paddingHeader);
 }
+/*---------------------------
+playlist section
+------------------------------*/
 .playlist {
   display: none;
   text-align: left;
@@ -204,6 +236,9 @@ header h3 {
   margin-top: 0.6rem;
   font-size: 0.875rem;
 }
+/*---------------------------
+bottom section
+------------------------------*/
 .bottom {
   max-height: 15%;
   z-index: 1;
@@ -214,10 +249,10 @@ header h3 {
   color: var(--hoverColor);
   cursor: pointer;
 }
-/* fixed dimension to render the image a square */
+/*  dimension in rem to make sure that the image remains a square */
 .bottom > div:last-of-type img {
-  height: 1.875rem;
-  width: 1.875rem;
+  max-height: 1.875rem;
+  max-width: 1.875rem;
   border-radius: 50%;
   background-color: #808080;
 }
@@ -237,16 +272,19 @@ header li:hover {
   cursor: pointer;
   color: var(--hoverColor);
 }
+
 /*---------------------------
 
-  Main
+
+MAIN
+
 
 ------------------------------*/
 
 main {
   width: calc(100% - 3.125rem);
   background-color: #141922;
-  height: 90vh;
+  height: 100%;
   position: relative;
   overflow-y: auto;
 }
@@ -260,7 +298,10 @@ main > section:first-of-type {
   z-index: 2;
 }
 
-/* categories */
+/*---------------------------
+categories section
+------------------------------*/
+
 main p {
   margin-left: 1rem;
   color: var(--secondaryColor);
@@ -310,7 +351,9 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* selction */
+/*---------------------------
+selection section
+------------------------------*/
 
 .selection > h2 {
   margin-left: 1rem;
@@ -374,7 +417,9 @@ h2 {
 
 /*---------------------------
 
-Footer
+
+  FOOTER
+
 
 ------------------------------*/
 
@@ -392,9 +437,9 @@ footer img {
   width: 100%;
   display: block;
 }
-
-/* info section */
-
+/*---------------------------
+info section
+------------------------------*/
 .info {
   width: 25%;
   max-height: 100%;
@@ -437,8 +482,9 @@ footer img {
 .info > div:nth-of-type(2) {
   max-width: 50%;
 }
-
-/* command section */
+/*---------------------------
+Command section
+------------------------------*/
 .command {
   display: flex;
   width: 50%;
@@ -477,7 +523,9 @@ footer img {
 .command .minutage {
   max-width: 50%;
 }
-/* volume section */
+/*---------------------------
+volume section
+------------------------------*/
 .volume {
   padding: 0 0.5rem;
   width: 25%;
@@ -505,15 +553,31 @@ footer img {
 .volume .minutage {
   width: 100%;
 }
+
 /*---------------------------
 
-  responsive
+
+RESPONSIVE
+
 
 ------------------------------*/
+@media screen and (max-width: 25.25rem) {
+  /* neccessary rule to avoid bar misplacement under 404 px */
+  .categories li:first-of-type::after {
+    position: absolute;
+    bottom: -1.2rem;
+  }
+}
 @media screen and (min-width: 36rem) {
+  /*---------------------------
+  header
+  ------------------------------*/
   header {
     width: 12.5rem;
   }
+  /*---------------------------
+  logo section  
+  ------------------------------*/
   .logo {
     padding-bottom: 2.5rem;
   }
@@ -523,15 +587,18 @@ footer img {
   .logo img:first-of-type {
     display: none;
   }
+  .top ul > li:first-of-type {
+    color: var(--hoverColor);
+    border-left: solid var(--spotifyColor);
+  }
+  /*---------------------------
+  playlist section
+  ------------------------------*/
   .playlist {
     display: block;
   }
   header span {
     display: inline;
-  }
-  .top ul > li:first-of-type {
-    color: var(--hoverColor);
-    border-left: solid var(--spotifyColor);
   }
   header li {
     display: flex;
@@ -546,6 +613,9 @@ footer img {
     display: block;
     margin-top: 0.7375rem;
   }
+  /*---------------------------
+  bottom
+  ------------------------------*/
   .bottom img {
     position: relative;
     left: -2px;
@@ -572,18 +642,21 @@ footer img {
     width: 100%;
     margin: 0.5rem 0;
   }
-
-  /* categories */
+  /*---------------------------
+  categories section
+  ------------------------------*/
   .categories li {
     width: calc(100% / 3 - 0.5375rem);
   }
-
-  /* footer */
-
+  /*---------------------------
+  footer
+  ------------------------------*/
   footer p {
     display: inline;
   }
-
+  /*---------------------------
+  volume
+  ------------------------------*/
   .volume {
     justify-content: flex-end;
   }
@@ -598,7 +671,9 @@ footer img {
 }
 
 @media screen and (min-width: 48rem) {
-  /* categories */
+  /*---------------------------
+  categories section
+  ------------------------------*/
   .categories ul {
     gap: 2rem;
   }
@@ -607,13 +682,17 @@ footer img {
     width: calc(100% / 5 - 0.5375rem);
   }
 
-  /* selection */
+  /*---------------------------
+  selection section
+  ------------------------------*/
   .card {
     width: calc(25% - 00.625rem);
     font-size: 0.875rem;
   }
 
-  /* foooter */
+  /*---------------------------
+  info section
+  ------------------------------*/
   .info > div:last-of-type {
     display: flex;
     flex-direction: row;
@@ -626,6 +705,9 @@ footer img {
     font-size: 0.8rem;
     width: 35%;
   }
+  /*---------------------------
+  command section
+  ------------------------------*/
   .command {
     gap: 0.7rem;
     font-size: 1rem;
@@ -641,6 +723,9 @@ footer img {
   .command .minutage {
     width: 110%;
   }
+  /*---------------------------
+  volume section
+  ------------------------------*/
   .volume > div:first-of-type {
     width: 40%;
     font-size: 0.9rem;
@@ -649,7 +734,9 @@ footer img {
   }
 }
 @media screen and (min-width: 64rem) {
-  /* selection */
+  /*---------------------------
+  selection section
+  ------------------------------*/
   .row:first-of-type {
     justify-content: space-between;
   }
@@ -661,10 +748,15 @@ footer img {
     font-size: 0.875rem;
   }
 
-  /* categories */
+  /*---------------------------
+  catergories section
+  ------------------------------*/
   .categories li {
     width: auto;
   }
+  /*---------------------------
+  info section
+  ------------------------------*/
   .info {
     width: 25%;
   }
@@ -672,6 +764,9 @@ footer img {
     max-width: calc(6.35rem - 2.3rem);
   }
 
+  /*---------------------------
+  command section
+  ------------------------------*/
   .command > div:first-of-type {
     position: relative;
     top: 0.4rem;
@@ -681,9 +776,3 @@ footer img {
     font-size: 2rem;
   }
 }
-
-/*---------------------------
-
-    Debug
-
-------------------------------*/
