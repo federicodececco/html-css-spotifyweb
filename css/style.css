@@ -92,11 +92,9 @@ button {
   border-radius: 100%;
   opacity: 0;
 }
-.minutage:hover::-webkit-slider-thumb {
-}
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -163,7 +161,8 @@ header span {
   display: none;
   text-align: left;
   max-height: 15rem;
-  margin-bottom: 7rem;
+  min-height: 7rem;
+  margin-bottom: 5rem;
   overflow-y: auto;
   flex-grow: 1;
   padding: 0 var(--paddingHeader);
@@ -246,6 +245,9 @@ main > section:first-of-type {
   display: flex;
   justify-content: end;
   height: 5.625rem;
+  position: sticky;
+  top:0;  
+  z-index: 2;
 }
 
 /* categories */
@@ -513,7 +515,6 @@ footer img {
   }
   .playlist {
     display: block;
-    min-height: 7%;
   }
   header span {
     display: inline;
@@ -574,7 +575,7 @@ footer img {
   }
 
   .volume {
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .volume > div:first-of-type {
@@ -582,6 +583,7 @@ footer img {
     font-size: 0.8rem;
     gap: 0.5rem;
     display: flex;
+    justify-content: flex-end;
   }
 }
 
