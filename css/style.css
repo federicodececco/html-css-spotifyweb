@@ -5,6 +5,16 @@
   --spotifyColor: #1db954;
   --paddingHeader: 0.625rem;
 }
+@font-face {
+  font-family: "SpotifyMix";
+  src: url("../font/SpotifyMix-Medium.eot");
+  src: url("path/to/SpotifyMix-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../font/SpotifyMix-Medium.woff2") format("woff2"),
+    url("../font/SpotifyMix-Medium.woff") format("woff"),
+    url("../font/SpotifyMix-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*---------------------------
 
@@ -34,7 +44,7 @@ main.container > div > div {
 body {
   height: 100vh;
   background-color: #141922;
-  font-family: "Nunito", sans-serif;
+  font-family: "SpotifyMix", "Nunito", sans-serif;
 }
 body > div {
   display: flex;
@@ -246,7 +256,7 @@ main > section:first-of-type {
   justify-content: end;
   height: 5.625rem;
   position: sticky;
-  top:0;  
+  top: 0;
   z-index: 2;
 }
 
