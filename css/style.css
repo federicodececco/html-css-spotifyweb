@@ -78,9 +78,8 @@ ul {
 
 ------------------------------*/
 
-/* for some reason using secondaryColor seems to remove inputs' borders */
 /*---------------------------
-chrome bar
+chrome/safari/opera  range bar
 ------------------------------*/
 .minutage {
   cursor: pointer;
@@ -114,7 +113,7 @@ chrome bar
 }
 
 /*---------------------------
-firefox bar
+firefox range bar
 ------------------------------*/
 .minutage::-moz-range-track {
   cursor: pointer;
@@ -149,7 +148,7 @@ firefox bar
   opacity: 1;
 }
 /*---------------------------
-scrollbar(only chrome)
+scrollbar(webkit only)
 ------------------------------*/
 /* track */
 ::-webkit-scrollbar-track {
@@ -377,7 +376,7 @@ main p {
   z-index: 1;
 }
 /* the height must be forced to stop it from  mispositiong the underbar on smaller screens  */
-/* the height is the space occupied by the font-style with this font-size */
+/* the height is equal to the space occupied by the font-family with this particular font-size */
 #underlined {
   max-height: 1.0625rem;
 }
@@ -513,7 +512,6 @@ info section
 .info > div:last-of-type {
   max-width: 15%;
 }
-
 .info p:hover {
   text-decoration: underline;
   color: var(--hoverColor);
@@ -634,6 +632,10 @@ RESPONSIVE
   .top ul > li:first-of-type {
     color: var(--hoverColor);
     border-left: solid var(--spotifyColor);
+  }
+  .top ul > li:first-of-type img, .top ul > li:first-of-type span{
+    position: relative;
+    right: 3px;
   }
   /*---------------------------
   playlist section
