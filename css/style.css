@@ -3,6 +3,7 @@
   --secondaryColor: #7d7f84;
   --hoverColor: #e5e5e6;
   --spotifyColor: #1db954;
+  --footerColor: #282828;
   --paddingHeader: 0.625rem;
 }
 
@@ -78,6 +79,9 @@ ul {
 ------------------------------*/
 
 /* for some reason using secondaryColor seems to remove inputs' borders */
+/*---------------------------
+chrome bar
+------------------------------*/
 .minutage {
   cursor: pointer;
   height: 0.5rem;
@@ -91,7 +95,6 @@ ul {
 .minutage:hover {
   accent-color: var(--spotifyColor);
 }
-/* should work only chrome,safari, ecc...*/
 .minutage::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -104,14 +107,50 @@ ul {
   opacity: 0;
 }
 .minutage:hover::-webkit-slider-thumb {
-opacity: 1;
+  opacity: 1;
 }
-
-
-
 ::-webkit-scrollbar {
   width: 3px;
 }
+
+/*---------------------------
+firefox bar
+------------------------------*/
+.minutage::-moz-range-track {
+  cursor: pointer;
+  border: none;
+  height: 0.4rem;
+  border-radius: 90px;
+  background-color: var(--primaryColor);
+}
+.minutage::-moz-range-progress {
+  background-color: var(--secondaryColor);
+  height: 0.4rem;
+  border-radius: 90px;
+  border: none;
+}
+.minutage {
+  border: 1px solid var(--footerColor);
+}
+.minutage::-moz-range-thumb {
+  border: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--spotifyColor);
+  opacity: 0;
+}
+
+.minutage:hover::-moz-range-progress {
+  background-color: var(--spotifyColor);
+}
+
+.minutage:hover::-moz-range-thumb {
+  opacity: 1;
+}
+/*---------------------------
+scrollbar(only chrome)
+------------------------------*/
 /* track */
 ::-webkit-scrollbar-track {
   display: none;
@@ -430,7 +469,7 @@ selection section
 
 footer {
   height: 5rem;
-  background-color: #282828;
+  background-color: var(--footerColor);
   align-items: center;
   display: flex;
   justify-content: space-between;
